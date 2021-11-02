@@ -10,3 +10,8 @@ def run_command(command):
         sys.exit(c.err)
 
     return c.out, c.err, c.return_code
+
+def run_command_async(command):
+    print("$ {command}".format(command=command))
+    c = delegator.run(command, block=False)
+    return c

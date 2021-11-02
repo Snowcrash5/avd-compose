@@ -8,10 +8,13 @@ def full_path():
     return Tools.get_full_path("emulator")
 
 
-def start(name, **kwargs):
+def start(name, runAsync=False, **kwargs):
     options_string = formatter.options_as_a_string(kwargs, option_prefix="-")
     command = "{full_path_of_tool} -avd {name} {options}".format(
         full_path_of_tool=full_path(), name=name, options=options_string
     )
-    return shell.run_command(command=command)
+    if runAsync:
+        return shell.run_command_async(command=command)
+    else:
+        return shell.run_command(command=command)
 
