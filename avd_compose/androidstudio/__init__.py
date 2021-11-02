@@ -28,7 +28,7 @@ class Tools:
     defaults = {
         "avdmanager": "tools/bin/avdmanager",
         "sdkmanager": "tools/bin/sdkmanager",
-        "emulator": "tools/emulator",
+        "emulator": "emulator/emulator",
     }
 
     @staticmethod
